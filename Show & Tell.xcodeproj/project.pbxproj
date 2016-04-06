@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E21800501CB4FF810003D6A0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E218004C1CB4FAEF0003D6A0 /* MapViewController.swift */; };
+		E21800521CB5022B0003D6A0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E21800511CB5022B0003D6A0 /* MapKit.framework */; };
+		E21800581CB5059D0003D6A0 /* CrumbPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E21800551CB5059D0003D6A0 /* CrumbPath.m */; };
+		E21800591CB5059D0003D6A0 /* CrumbPathRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E21800571CB5059D0003D6A0 /* CrumbPathRenderer.m */; };
+		E218005B1CB5060E0003D6A0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E218005A1CB5060E0003D6A0 /* CoreLocation.framework */; };
 		E2B81EEB1CB3F9930006C4AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B81EEA1CB3F9930006C4AE /* AppDelegate.swift */; };
-		E2B81EED1CB3F9930006C4AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B81EEC1CB3F9930006C4AE /* ViewController.swift */; };
 		E2B81EF01CB3F9930006C4AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2B81EEE1CB3F9930006C4AE /* Main.storyboard */; };
 		E2B81EF31CB3F9930006C4AE /* Show___Tell.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2B81EF11CB3F9930006C4AE /* Show___Tell.xcdatamodeld */; };
 		E2B81EF51CB3F9930006C4AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B81EF41CB3F9930006C4AE /* Assets.xcassets */; };
@@ -18,9 +22,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E218004C1CB4FAEF0003D6A0 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E21800511CB5022B0003D6A0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E21800531CB5059C0003D6A0 /* Show & Tell-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Show & Tell-Bridging-Header.h"; sourceTree = "<group>"; };
+		E21800541CB5059D0003D6A0 /* CrumbPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrumbPath.h; sourceTree = "<group>"; };
+		E21800551CB5059D0003D6A0 /* CrumbPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPath.m; sourceTree = "<group>"; };
+		E21800561CB5059D0003D6A0 /* CrumbPathRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrumbPathRenderer.h; sourceTree = "<group>"; };
+		E21800571CB5059D0003D6A0 /* CrumbPathRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPathRenderer.m; sourceTree = "<group>"; };
+		E218005A1CB5060E0003D6A0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E2B81EE71CB3F9920006C4AE /* Show & Tell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Show & Tell.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B81EEA1CB3F9930006C4AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2B81EEC1CB3F9930006C4AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2B81EEF1CB3F9930006C4AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2B81EF21CB3F9930006C4AE /* Show___Tell.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Show___Tell.xcdatamodel"; sourceTree = "<group>"; };
 		E2B81EF41CB3F9930006C4AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E218005B1CB5060E0003D6A0 /* CoreLocation.framework in Frameworks */,
+				E21800521CB5022B0003D6A0 /* MapKit.framework in Frameworks */,
 				E2B81F011CB3F9B20006C4AE /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +59,8 @@
 		E2B81EDE1CB3F9920006C4AE = {
 			isa = PBXGroup;
 			children = (
+				E218005A1CB5060E0003D6A0 /* CoreLocation.framework */,
+				E21800511CB5022B0003D6A0 /* MapKit.framework */,
 				E2B81F001CB3F9B20006C4AE /* CloudKit.framework */,
 				E2B81EE91CB3F9920006C4AE /* Show & Tell */,
 				E2B81EE81CB3F9920006C4AE /* Products */,
@@ -66,12 +81,17 @@
 				E2B81EFF1CB3F9AC0006C4AE /* Show & Tell.entitlements */,
 				E2B81F021CB3FD640006C4AE /* GT-Walsheim-Regular.ttf */,
 				E2B81EEA1CB3F9930006C4AE /* AppDelegate.swift */,
-				E2B81EEC1CB3F9930006C4AE /* ViewController.swift */,
+				E218004C1CB4FAEF0003D6A0 /* MapViewController.swift */,
+				E21800541CB5059D0003D6A0 /* CrumbPath.h */,
+				E21800551CB5059D0003D6A0 /* CrumbPath.m */,
+				E21800561CB5059D0003D6A0 /* CrumbPathRenderer.h */,
+				E21800571CB5059D0003D6A0 /* CrumbPathRenderer.m */,
 				E2B81EEE1CB3F9930006C4AE /* Main.storyboard */,
 				E2B81EF41CB3F9930006C4AE /* Assets.xcassets */,
 				E2B81EF61CB3F9930006C4AE /* LaunchScreen.storyboard */,
 				E2B81EF91CB3F9930006C4AE /* Info.plist */,
 				E2B81EF11CB3F9930006C4AE /* Show___Tell.xcdatamodeld */,
+				E21800531CB5059C0003D6A0 /* Show & Tell-Bridging-Header.h */,
 			);
 			path = "Show & Tell";
 			sourceTree = "<group>";
@@ -154,7 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2B81EED1CB3F9930006C4AE /* ViewController.swift in Sources */,
+				E21800581CB5059D0003D6A0 /* CrumbPath.m in Sources */,
+				E21800501CB4FF810003D6A0 /* MapViewController.swift in Sources */,
+				E21800591CB5059D0003D6A0 /* CrumbPathRenderer.m in Sources */,
 				E2B81EEB1CB3F9930006C4AE /* AppDelegate.swift in Sources */,
 				E2B81EF31CB3F9930006C4AE /* Show___Tell.xcdatamodeld in Sources */,
 			);
@@ -269,11 +291,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Show & Tell/Show & Tell.entitlements";
 				INFOPLIST_FILE = "Show & Tell/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.miln.Show---Tell";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Show & Tell/Show & Tell-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -281,11 +306,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Show & Tell/Show & Tell.entitlements";
 				INFOPLIST_FILE = "Show & Tell/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.miln.Show---Tell";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Show & Tell/Show & Tell-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -308,6 +335,7 @@
 				E2B81EFE1CB3F9930006C4AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

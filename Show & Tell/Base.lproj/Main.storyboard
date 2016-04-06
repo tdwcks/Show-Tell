@@ -1,48 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1D3-WB-f63">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ayg-6h-MQV">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="GT-Walsheim-Regular.ttf">
+            <string>GTWalsheimRegular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--My Data-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Map view-->
+        <scene sceneID="ZmL-wF-bia">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Show___Tell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map view" id="xgi-96-Zlh" customClass="MapViewController" customModule="Show___Tell" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="3B4-ef-XFp"/>
+                        <viewControllerLayoutGuide type="bottom" id="kDi-yL-5zQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="52K-H6-Pi5">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Mh-qJ-uyx">
+                                <rect key="frame" x="77" y="95" width="240" height="128"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GU9-LV-iI7">
+                                <rect key="frame" x="174" y="436" width="151" height="30"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.43529411759999997" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="VBC-Sa-dU7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GTWalsheimRegular" family="GT Walsheim" pointSize="15"/>
+                                <state key="normal" title="Use My Location Data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMyLocation:" destination="xgi-96-Zlh" eventType="touchUpInside" id="Jsw-LP-9i5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Mh-qJ-uyx" firstAttribute="height" secondItem="52K-H6-Pi5" secondAttribute="height" id="32l-2O-ERS"/>
+                            <constraint firstItem="0Mh-qJ-uyx" firstAttribute="leading" secondItem="52K-H6-Pi5" secondAttribute="leading" id="Lbg-Aq-EHB"/>
+                            <constraint firstAttribute="bottom" secondItem="GU9-LV-iI7" secondAttribute="bottom" id="hvW-Vj-wgk"/>
+                            <constraint firstItem="0Mh-qJ-uyx" firstAttribute="width" secondItem="52K-H6-Pi5" secondAttribute="width" id="mk8-Gy-9vd"/>
+                            <constraint firstItem="GU9-LV-iI7" firstAttribute="width" secondItem="52K-H6-Pi5" secondAttribute="width" id="r8i-RF-ZCW"/>
+                            <constraint firstItem="0Mh-qJ-uyx" firstAttribute="top" secondItem="52K-H6-Pi5" secondAttribute="top" id="uYp-KQ-WON"/>
+                            <constraint firstItem="GU9-LV-iI7" firstAttribute="leading" secondItem="52K-H6-Pi5" secondAttribute="leading" id="xpZ-X8-azY"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Data" id="kiT-h4-yCT"/>
+                    <navigationItem key="navigationItem" title="Map View" id="wL9-Ak-QmZ"/>
+                    <connections>
+                        <outlet property="mapView" destination="0Mh-qJ-uyx" id="QwG-Hp-vji"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zma-RJ-8at" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="-353"/>
+            <point key="canvasLocation" x="855" y="-853"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="aNX-5c-QFS">
+        <scene sceneID="vsu-Na-F19">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1D3-WB-f63" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ayg-6h-MQV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VdW-Ha-iSV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="XeI-il-tj7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Y2p-Kw-WeI"/>
+                        <segue destination="xgi-96-Zlh" kind="relationship" relationship="rootViewController" id="6I9-Pb-k1D"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JiX-Uh-onT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHN-Lr-sH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="151" y="-353"/>
+            <point key="canvasLocation" x="76" y="-853"/>
         </scene>
     </scenes>
 </document>

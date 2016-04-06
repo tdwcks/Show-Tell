@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  NavigationController.swift
 //  Show & Tell
 //
-//  Created by Tom Wicks on 05/04/2016.
+//  Created by Tom Wicks on 06/04/2016.
 //  Copyright © 2016 Miln. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,25 +23,11 @@ class ViewController: UIViewController {
         // Initialise Navigation Styles
         
         self.navigationController?.navigationBar.titleTextAttributes = navigationStyle
-        
-        for parent in self.navigationController!.navigationBar.subviews {
-            for childView in parent.subviews {
-                if(childView is UIImageView) {
-                    childView.removeFromSuperview()
-                }
-            }
-        }
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
-    
-    
-
 
 }
-
