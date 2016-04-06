@@ -24,37 +24,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.userTrackingMode = .Follow
     }
     
-    @IBAction func sendMyLocation(sender: AnyObject) {
-        let alert = UIAlertController(title: "New Sweet", message: "Enter a sweet", preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler { (textField:UITextField) -> Void in
-            textField.placeholder = "Your sweet"
-        }
-        
-        alert.addAction(UIAlertAction(title: "Send", style: .Default, handler: { (action:UIAlertAction) -> Void in
-            let textField = alert.textFields!.first!
-            
-            if textField.text != "" {
-                let newSweet = CKRecord(recordType: "Sweet")
-                newSweet["content"] = textField.text
-                
-                let publicData = CKContainer.defaultContainer().publicCloudDatabase
-                publicData.saveRecord(newSweet, completionHandler: { (record:CKRecord?, error:NSError?) -> Void in
-                    if error == nil {
-                        print("woo")
-                    }else{
-                        print(error)
-                    }
-                })
-                
-            }
-            
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -120,12 +89,23 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return MKTileOverlayRenderer(overlay: overlay)
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
-    {
-        let location = locations.last
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last!
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         addCrumbPoint(center)
-
+        let locationRecord = CKRecord(recordType: "location")
+        // locationRecord.setObject(location, forKey: "location")
+        locationRecord["location"] = location
+        let publicData = CKContainer.defaultContainer().publicCloudDatabase
+        publicData.saveRecord(locationRecord) { record, error in
+            //
+        }
+    }
+    
+    @IBAction func sendMyLocation(sender: AnyObject) {
+        
+        
+    
     }
     
     override func didReceiveMemoryWarning() {
