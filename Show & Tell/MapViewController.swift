@@ -89,6 +89,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return MKTileOverlayRenderer(overlay: overlay)
     }
     
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last!
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
@@ -102,10 +103,36 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
     
+    // Get's Location data
+    
+    func fetchLocationData() {
+        let container = CKContainer.defaultContainer()
+        let publicDatabase = container.publicCloudDatabase
+        
+        let query = CKQuery(recordType: "location", predicate: NSPredicate(format: "TRUEPREDICATE", argumentArray: nil))
+        publicDatabase.performQuery(query, inZoneWithID: nil){
+            results, error in
+            
+            /* Note: Should check error, might just have to retry */
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            // see if we have any results
+            guard let location = results else {
+                print("No results")
+                return
+            }
+            
+            // first Location data
+            print(location[0])
+        }
+    }
+    
     @IBAction func sendMyLocation(sender: AnyObject) {
         
         
-    
     }
     
     override func didReceiveMemoryWarning() {
